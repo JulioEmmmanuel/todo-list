@@ -13,11 +13,11 @@
     box-shadow: 0px 5px 30px rgba(32, 35, 41, 0.25);
   }
   
-  .TodoSearch::placeholder {
-    color: #A5A5A5;
-    font-weight: 400;
-  }
-  
-  .TodoSearch:focus {
-    outline-color: var(--mid-blue);
-  }
+.TodoSearch::placeholder {
+  color: #A5A5A5;
+  font-weight: 400;
+}
+
+.TodoSearch:focus {
+  outline-color: var(--mid-blue);
+}

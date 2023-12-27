@@ -19,21 +19,30 @@ function TodoProvider({children}){
     const totalTodos = todos.length;
 
     const searchedTodos = todos.filter(todo => {
-    const todoText = todo.text.toLowerCase().trim();
-    const searchText = searchValue.toLowerCase().trim();
-    return todoText.includes(searchText);
+        const todoText = todo.text.toLowerCase().trim();
+        const searchText = searchValue.toLowerCase().trim();
+        return todoText.includes(searchText);
     });
 
     const toggleItem = (item) => {
-    const newTodos = [...todos];
-    const selected = newTodos.find(todo => todo.text === item.text);
-    selected.completed = !selected.completed; 
-    saveTodos(newTodos);
+        const newTodos = [...todos];
+        const selected = newTodos.find(todo => todo.text === item.text);
+        selected.completed = !selected.completed; 
+        saveTodos(newTodos);
     }
 
     const deleteItem = (item) => {
-    const todosWithoutItem = todos.filter(todo => todo.text !== item.text);
-    saveTodos(todosWithoutItem);
+        const todosWithoutItem = todos.filter(todo => todo.text !== item.text);
+        saveTodos(todosWithoutItem);
+    }
+
+    const addItem = (item) => {
+        const newTodos = [...todos];
+        newTodos.push({
+            text: item,
+            completed: false
+        });
+        saveTodos(newTodos);
     }
 
     return (
@@ -43,6 +52,7 @@ function TodoProvider({children}){
                 searchValue, 
                 setSearchValue, 
                 searchedTodos,
+                addItem,
                 toggleItem,
                 deleteItem,
                 loading,
