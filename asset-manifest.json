@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/JulioEmmmanuel/todo-list/static/css/main.182d638c.css",
+    "main.js": "/JulioEmmmanuel/todo-list/static/js/main.fff28bcf.js",
+    "index.html": "/JulioEmmmanuel/todo-list/index.html",
+    "static/media/check.svg": "/JulioEmmmanuel/todo-list/static/media/check.9e70685b2d51064a3a8a9ef8276cca11.svg",
+    "static/media/crossmark.svg": "/JulioEmmmanuel/todo-list/static/media/crossmark.b2d7e8d51e8510e4316a937df9bdf074.svg",
+    "main.182d638c.css.map": "/JulioEmmmanuel/todo-list/static/css/main.182d638c.css.map",
+    "main.fff28bcf.js.map": "/JulioEmmmanuel/todo-list/static/js/main.fff28bcf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.182d638c.css",
+    "static/js/main.fff28bcf.js"
+  ]
+}
