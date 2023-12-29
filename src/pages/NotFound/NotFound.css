@@ -1,0 +1,40 @@
+.NotFound {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--seasalt)
+}
+
+.NotFound h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.NotFound p {
+    margin-top: 30px;
+    font-size: 18px;
+    width: 75%;
+    max-width: 400px;
+}
+
+.NotFound button {
+    width: 50%;
+    max-width: 300px;
+    padding: 15px 20px;
+    background-color: transparent;
+    color: var(--seasalt);
+    border: 1px solid var(--seasalt);
+    border-radius: 5px;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 2px 5px 20px 8px rgba(0, 0, 0, 0.1);
+}
+
+.NotFound button {
+    cursor: pointer;
+}

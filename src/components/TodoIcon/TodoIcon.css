@@ -1,0 +1,35 @@
+.Icon{
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:48px;
+    width:48px;
+    font-size:24px;
+    font-weight:700
+}
+
+.Icon-check:hover svg{
+    fill:green;
+}
+
+.Icon-edit {
+    width: 25px;
+    height: 25px;
+    margin-top: 9px;
+    margin-right: 2px;
+    align-self: start;
+}
+
+.Icon-edit:hover svg{
+    fill: var(--teal);
+}
+
+.Icon-delete svg{
+    align-self: start;
+    justify-self: end;
+}
+
+.Icon-delete:hover svg{
+    fill:red;
+}
