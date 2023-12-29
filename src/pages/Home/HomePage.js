@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./HomePage.css"
-
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { TodoCounter } from '../../components/TodoCounter';
 import { TodoSearch } from '../../components/TodoSearch';
 import { TodoList } from '../../components/TodoList';
@@ -18,6 +17,7 @@ import { ChangeAlert } from "../../components/ChangeAlert";
 function HomePage() {
 
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const {
     states,
@@ -42,6 +42,12 @@ function HomePage() {
     setStorageChange
   } = stateUpdaters;
 
+  useEffect(() => {
+    if(searchParams.get("search")){
+      setSearchValue(searchParams.get("search"));
+    }  
+  }, [])
+  
   return (
     <div className="Home">
       <TodoHeader loading={loading}>
