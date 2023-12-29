@@ -1,7 +1,7 @@
 import React from "react";
 import "./HomePage.css"
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { TodoCounter } from '../../components/TodoCounter';
 import { TodoSearch } from '../../components/TodoSearch';
 import { TodoList } from '../../components/TodoList';
@@ -71,9 +71,9 @@ function HomePage() {
                 key={todo.id} 
                 text={todo.text} 
                 completed={todo.completed}
-                onToggle={() => {toggleItem(todo)}}
-                onEdit={() => {console.log("GOGOGOGO")}}
-                onDelete={() => {deleteItem(todo)}}
+                onToggle={() => {toggleItem(todo.id)}}
+                onEdit={() => {navigate(`/edit/${todo.id}`, {state: {text: todo.text}})}}
+                onDelete={() => {deleteItem(todo.id)}}
             />)
           }
       </TodoList>  

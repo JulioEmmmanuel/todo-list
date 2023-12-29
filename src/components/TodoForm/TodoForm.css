@@ -3,6 +3,7 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 80%;
     margin: 0 auto;
     max-width: 500px;
@@ -41,6 +42,7 @@ textarea::placeholder {
 
 .TodoForm-buttonContainer {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
 }
@@ -48,8 +50,10 @@ textarea::placeholder {
 
 .TodoForm-buttonContainer button {
     width: 40%;
+    margin: 0 auto;
     max-width: 150px;
-    padding: 15px 0;
+    min-width: 100px;
+    padding: 15px 5px;
     border-radius: 5px;
     font-weight: bold;
     font-size: 18px;

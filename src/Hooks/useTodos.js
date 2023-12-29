@@ -13,7 +13,6 @@ function useTodos(){
       } = useLocalStorage("TODOS_V2", []);
     
     const [searchValue, setSearchValue] = React.useState("");
-    const [openModal, setOpenModal] = React.useState(false);
     const [storageChange, setStorageChange] = React.useState(false);
 
     const completedTodos = todos.filter(todo => todo.completed).length;
@@ -25,23 +24,35 @@ function useTodos(){
         return todoText.includes(searchText);
     });
 
-    const toggleItem = (item) => {
+    const toggleItem = (id) => {
         const newTodos = [...todos];
-        const selected = newTodos.find(todo => todo.id === item.id);
+        const selected = newTodos.find(todo => todo.id === id);
         selected.completed = !selected.completed; 
         saveTodos(newTodos);
     }
 
-    const deleteItem = (item) => {
-        const todosWithoutItem = todos.filter(todo => todo.id !== item.id);
+    const getItem = (id) => {
+        const selected = todos.find(todo => todo.id === id);
+        return selected;
+    }
+
+    const editItem = (id, newText) => {
+        const newTodos = [...todos];
+        const selected = newTodos.find(todo => todo.id === id);
+        selected.text = newText; 
+        saveTodos(newTodos);
+    }
+
+    const deleteItem = (id) => {
+        const todosWithoutItem = todos.filter(todo => todo.id !== id);
         saveTodos(todosWithoutItem);
     }
 
-    const addItem = (item) => {
+    const addItem = (text) => {
         const newTodos = [...todos];
         const id = newTodoId();
         newTodos.push({
-            text: item,
+            text: text,
             completed: false,
             id: id
         });
@@ -53,13 +64,13 @@ function useTodos(){
     }
 
     const states = {
+        getItem,
         completedTodos,
         totalTodos,
         searchValue,
         searchedTodos,
         loading,
         error,
-        openModal,
         storageChange
     }
 
@@ -68,9 +79,9 @@ function useTodos(){
         addItem,
         toggleItem,
         deleteItem,
-        setOpenModal,
+        editItem,
         sincronizeTodos,
-        setStorageChange
+        setStorageChange,
     }
 
     return { 
